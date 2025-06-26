@@ -24,9 +24,10 @@ public class ContractController {
     @PostMapping("/generate-contract")
     public void generateContract(@RequestParam Map<String, String> formData, HttpServletResponse response) throws IOException {
         contractService.enrichFormData(formData);
-        byte[] document = contractService.generateDocFromTemplate("template.docx", formData);
+        byte[] document = contractService.generateDocFromTemplate("Трудовой договор template.docx", formData);
         sendDocResponse(response, "employment_contract.docx", document);
     }
+
 
     @PostMapping("/generate-prikaz")
     public void generatePrikaz(@RequestParam Map<String, String> formData, HttpServletResponse response) throws IOException {
