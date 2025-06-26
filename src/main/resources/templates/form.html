@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Employment Contract Form</title>
+</head>
+<body>
+    <h2>Fill Employee Info</h2>
+    <form th:action="@{/generate}" method="post">
+        <label> First Name: <input name="firstName"/> </label><br/>
+        <label> Last Name: <input name="lastName"/> </label> <br/>
+        <label> Middle name: <input name="middle"/></label> <br/>
+        <label>IIN Number: <input name="iinNum" /></label><br/>
+        <label>ID Number: <input name="idNum" /></label><br/>
+        <label>ID Date: <input name="idDate" /></label><br/>
+        <label>Phone Number: <input name="telNum" /></label><br/>
+        <label>Job Title: <input name="jobTitle" /></label><br/>
+        <label>Salary Number: <input name="salaryNum" /></label><br/>
+        <label>Salary (Words): <input name="salaryWord" /></label><br/>
+        <button formaction="/generate-contract" type="submit">Download Contract</button>
+        <button formaction="/generate-prikaz" type="submit"> Download Приказ</button>
+        <button formaction="/generate-nda" type="submit"> Download NDA</button>
+    </form>
+</body>
+</html>
